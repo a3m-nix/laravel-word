@@ -7,18 +7,17 @@ class UserController extends Controller
     public function cloneBlock()
     {
         // Template processor instance creation
-        echo date('H:i:s'), ' Creating new TemplateProcessor instance...';
         $file = storage_path('app/public/word/Sample_23_TemplateBlock.docx');
+        //$file = storage_path('app/public/word/sampelwps.docx');
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($file);
 
-        // Will clone everything between ${tag} and ${/tag}, the number of times. By default, 1.
-        $templateProcessor->cloneBlock('CLONEME', 3);
+        //$templateProcessor->cloneBlock('CLONEME', 3);
         //berdasarkan ${CLONINGLIST} and ${/CLONINGLIST} di file template
-        $templateProcessor->cloneBlock('CLONINGLIST', 9);
-        $templateProcessor->deleteBlock('DELETEME');
+        $templateProcessor->cloneBlock('CLONEME', 9);
+        //$templateProcessor->deleteBlock('DELETEME');
 
         echo date('H:i:s'), ' Saving the result document...';
-        $result = storage_path('app/public/word/result_Sample_23_TemplateBlock.docx');
+        $result = storage_path('app/public/word/result_sampelwps.docx');
         $templateProcessor->saveAs($result);
     }
 
