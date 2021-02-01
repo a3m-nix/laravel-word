@@ -6,9 +6,10 @@ class UserController extends Controller
 {
     public function cloneBlock()
     {
+        ini_set("pcre.backtrack_limit", -1);
         // Template processor instance creation
-        $file = storage_path('app/public/word/Sample_23_TemplateBlock.docx');
-        //$file = storage_path('app/public/word/sampelwps.docx');
+        //$file = storage_path('app/public/word/Sample_23_TemplateBlock.docx');
+        $file = storage_path('app/public/word/sampelwps.docx');
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($file);
 
         //$templateProcessor->cloneBlock('CLONEME', 3);
