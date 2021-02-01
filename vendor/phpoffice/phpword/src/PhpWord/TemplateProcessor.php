@@ -731,6 +731,7 @@ class TemplateProcessor
      * @param array $variableReplacements Array containing replacements for macros found inside the block to clone
      *
      * @return string|null
+     * https: //github.com/PHPOffice/PHPWord/issues/1836
      */
     public function cloneBlock($blockname, $clones = 1, $replace = true, $indexVariables = false, $variableReplacements = null)
     {
